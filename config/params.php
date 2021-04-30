@@ -1,0 +1,29 @@
+<?php
+
+declare(strict_types=1);
+
+use Simple\View\Bootstrap5\ViewInjection\ParametersViewInjection;
+use Yiisoft\Factory\Definition\Reference;
+use Yiisoft\Yii\View\CsrfViewInjection;
+
+return [
+    'yiisoft/aliases' => [
+        'aliases' => [
+            '@simple-view-bootstrap5' => '@vendor/yii-extension/simple-view-bootstrap5',
+            '@layout' => '@simple-view-bootstrap5/storage/layout',
+        ]
+    ],
+
+    'yiisoft/yii-view' => [
+        'injections' => [
+            Reference::to(CsrfViewInjection::class),
+            Reference::to(ParametersViewInjection::class),
+        ],
+    ],
+
+    'yiisoft/translator' => [
+        'categorySources' => [
+            Reference::to('categorySourceSimpleViewBootstrap5'),
+        ],
+    ],
+];

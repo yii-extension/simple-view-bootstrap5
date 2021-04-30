@@ -1,0 +1,18 @@
+.form-contact {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: auto;
+}
+
+.has-error {
+    border-color: #dc3545;
+}
+
+.has-success {
+    border-color: #198754;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: hsl(217, 71%, 53%);
+}
