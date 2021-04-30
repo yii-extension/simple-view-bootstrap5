@@ -13,10 +13,12 @@ final class BootstrapIconsAsset extends AssetBundle
     public ?string $baseUrl = '@assetsUrl';
     public ?string $sourcePath = '@npm/bootstrap-icons';
 
+    /** @var array */
     public array $css = [
         'font/bootstrap-icons.css',
     ];
 
+    /** @var array */
     public function __construct()
     {
         $pathMatcher = new PathMatcher();

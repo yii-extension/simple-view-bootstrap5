@@ -13,10 +13,12 @@ final class ViewBootstrap5Asset extends AssetBundle
     public ?string $baseUrl = '@assetsUrl';
     public ?string $sourcePath = '@simple-view-bootstrap5/storage/asset/css';
 
+    /** @var array */
     public array $css = [
         'site.css'
     ];
 
+    /** @var array */
     public array $depends = [
         BootstrapAsset::class,
         BootstrapIconsAsset::class,
