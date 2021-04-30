@@ -35,7 +35,7 @@ $this->setJsFiles($assetManager->getJsFiles());
             <body class="d-flex h-100 text-center text-black">
                 <div class="cover-container-fluid d-flex w-100 h-100 mx-auto flex-column">
                     <header class="mb-auto">
-                        <?= $this->render('_menu', ['urlMatcher' => $urlMatcher]) ?>
+                        <?= $this->render('_menu', ['translator' => $translator, 'urlMatcher' => $urlMatcher]) ?>
                         <?= AlertMessage::widget() ?>
                     </header>
 
