@@ -10,11 +10,14 @@ $this->setTitle(Html::encode($title));
 ?>
 
 <div class="jumbotron jumbotron-fluid text-center">
-
     <h1 class="title"><?= $translator->translate('Hello!', [], 'simple-view-bootstrap5') ?></h1>
 
     <p class="subtitle">
-        <?= $translator->translate("Let's start something great with <strong>Yii3</strong>!", [], 'simple-view-bootstrap5') ?>
+        <?= $translator->translate(
+            "Let's start something great with <strong>Yii3</strong>!",
+            [],
+            'simple-view-bootstrap5'
+        ) ?>
     </p>
 
     <p class="subtitle">
@@ -22,5 +25,4 @@ $this->setTitle(Html::encode($title));
             <?= $translator->translate("Don't forget to check the guide.", [], 'simple-view-bootstrap5') ?>
         </a>
     </p>
-
 </div>
