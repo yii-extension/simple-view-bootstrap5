@@ -9,7 +9,7 @@ use Yiisoft\Translator\MessageFormatterInterface;
 
 return [
     'categorySourceSimpleViewBootstrap5' => static function (Aliases $aliases, MessageFormatterInterface $messageFormatter) {
-        $messageReader = new MessageSource($aliases->get('@translations'));
+        $messageReader = new MessageSource($aliases->get('@simple-view-bootstrap5/storage/translations'));
 
         return new CategorySource('simple-view-bootstrap5', $messageReader, $messageFormatter);
     },
