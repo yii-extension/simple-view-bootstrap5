@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /**
- * @var App\ApplicationParameters $app
- * @var Yiisoft\Yii\Web\User\User $user
  * @var array $menuItems
+ * @var TranslatorInterface $translator
+ * @var UrlMatcherInterface $urlMatcher
  */
 
 use Yiisoft\Yii\Bootstrap5\Nav;

@@ -3,11 +3,12 @@
 declare(strict_types=1);
 
 use Yiisoft\Html\Html;
+use Yiisoft\View\WebView;
 
 /**
  * @var string $csrf
+ * @var WebView $this
  */
-
 ?>
 
 <head>

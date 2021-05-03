@@ -1,5 +1,4 @@
 <div class = 'd-flex flex-fill align-items-center container-fluid'>
-
     <div class = 'd-flex flex-fill float-start'>
         <i class=''></i>
         <a class='text-decoration-none' href='https://www.yiiframework.com/' target='_blank' rel='noopener'>

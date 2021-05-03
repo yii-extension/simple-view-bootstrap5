@@ -11,11 +11,12 @@
 [![codecov](https://codecov.io/gh/yii-extension/simple-view-bootstrap5/branch/master/graph/badge.svg?token=tUznVx9Em7)](https://codecov.io/gh/yii-extension/simple-view-bootstrap5)
 [![static analysis](https://github.com/yii-extension/simple-view-bootstrap5/workflows/static%20analysis/badge.svg)](https://github.com/yii-extension/simple-view-bootstrap5/actions?query=workflow%3A%22static+analysis%22)
 [![type-coverage](https://shepherd.dev/github/yii-extension/simple-view-bootstrap5/coverage.svg)](https://shepherd.dev/github/yii-extension/simple-view-bootstrap5)
+[![Open Collective](https://img.shields.io/badge/Open%20Collective-sponsor-7eadf1?logo=open%20collective&logoColor=7eadf1&labelColor=555555)](https://opencollective.com/yiisoft)
 
 ## Directory structure
 
       config/             application directory configurations
-          web             contains web config local classes
+          common          contains common config local classes
           
       src/                application directory
           Action          contains action classes
@@ -129,7 +130,7 @@ The code is statically analyzed with [Psalm](https://psalm.dev/docs). To run sta
 
 ### License
 
-The simple-app for Yii Packages is free software. It is released under the terms of the BSD License.
+The simple-view-bootstrap5 for Yii Packages is free software. It is released under the terms of the BSD License.
 Please see [`LICENSE`](./LICENSE.md) for more information.
 
 Maintained by [Yii Extension](https://github.com/yii-extension).

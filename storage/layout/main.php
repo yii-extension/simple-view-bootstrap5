@@ -5,13 +5,20 @@ declare(strict_types=1);
 use Simple\View\Bootstrap5\Asset\BootstrapIconsAsset;
 use Simple\View\Bootstrap5\Asset\ViewBootstrap5Asset;
 use Yii\Extension\Widget\AlertMessage;
+use Yiisoft\Assets\AssetManager;
+use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Html\Html;
+use Yiisoft\Router\UrlMatcherInterface;
+use Yiisoft\Translator\TranslatorInterface;
+use Yiisoft\View\WebView;
 
 /**
- * @var App\ApplicationParameters $app
- * @var Yiisoft\Assets\AssetManager $assetManager
- * @var string $csrf
+ * @var AssetManager $assetManager
  * @var string $content
+ * @var CsrfTokenInterface $csrf
+ * @var TranslatorInterface $translator
+ * @var UrlMatcherInterface $urlMatcher
+ * @var WebView $this
  */
 
 $assetManager->register([
