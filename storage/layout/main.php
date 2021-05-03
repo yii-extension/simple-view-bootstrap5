@@ -8,6 +8,7 @@ use Yii\Extension\Widget\AlertMessage;
 use Yiisoft\Assets\AssetManager;
 use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Html\Html;
+use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Router\UrlMatcherInterface;
 use Yiisoft\Translator\TranslatorInterface;
 use Yiisoft\View\WebView;
@@ -42,7 +43,16 @@ $this->setJsFiles($assetManager->getJsFiles());
             <body class="d-flex h-100 text-center text-black">
                 <div class="cover-container-fluid d-flex w-100 h-100 mx-auto flex-column">
                     <header class="mb-auto">
-                        <?= $this->render('_menu', ['translator' => $translator, 'urlMatcher' => $urlMatcher]) ?>
+                        <?= $this->render(
+                            '_menu',
+                            [
+                                'csrf' => $csrf,
+                                'translator' => $translator,
+                                'urlGenerator' => $urlGenerator,
+                                'urlMatcher' => $urlMatcher,
+                                'user' => $user ?? [],
+                            ]
+                        ) ?>
                         <?= AlertMessage::widget() ?>
                     </header>
 
