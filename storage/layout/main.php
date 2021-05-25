@@ -28,8 +28,8 @@ $assetManager->register([
 
 $aliases->set('@icons', $assetManager->getBundle(BootstrapIconsAsset::class)->baseUrl);
 
-$this->setCssFiles($assetManager->getCssFiles());
-$this->setJsFiles($assetManager->getJsFiles());
+$this->addCssFiles($assetManager->getCssFiles());
+$this->addJsFiles($assetManager->getJsFiles());
 ?>
 
 <?php $this->beginPage() ?>

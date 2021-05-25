@@ -20,7 +20,7 @@ use Yiisoft\Yii\Bootstrap5\NavBar;
  */
 
 $config = [
-    'brandLabel()' => [$translator->translate('My Project', [], 'simple-view-bootstrap5')],
+    'brandText()' => [$translator->translate('My Project', [], 'simple-view-bootstrap5')],
     'options()' => [['class' => 'navbar navbar-dark navbar-expand-lg bg-dark']],
 ];
 
