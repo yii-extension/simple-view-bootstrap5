@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Simple\View\Bootstrap5\Asset;
 
+use Yii\Extension\Asset\Bootstrap5\Bootstrap5Asset;
+use Yii\Extension\Asset\Bootstrap5\Bootstrap5IconsAsset;
 use Yiisoft\Assets\AssetBundle;
-use Yiisoft\Yii\Bootstrap5\Assets\BootstrapAsset;
 
 final class ViewBootstrap5Asset extends AssetBundle
 {
@@ -20,7 +21,7 @@ final class ViewBootstrap5Asset extends AssetBundle
 
     /** @var array */
     public array $depends = [
-        BootstrapAsset::class,
-        BootstrapIconsAsset::class,
+        Bootstrap5Asset::class,
+        Bootstrap5IconsAsset::class,
     ];
 }

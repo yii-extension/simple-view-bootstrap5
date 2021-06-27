@@ -50,14 +50,14 @@ final class ApplicationRunner
         );
 
         /** @psalm-suppress MixedArgumentTypeCoercion */
-        $container = new Container($this->buildConfig($config), $config->get('providers'));
+        $container = new Container($this->buildConfig($config));
 
         // set aliases tests app
         $aliases = $container->get(Aliases::class);
         $aliases->set('@root', dirname(__DIR__, 3));
         $aliases->set('@assets', '@root/tests/_data/public/assets');
         $aliases->set('@assetsUrl', '/assets');
-        $aliases->set('@npm', '@root/vendor/npm-asset');
+        $aliases->set('@npm', '@root/node_modules');
         $aliases->set('@runtime', '@root/tests/_data/runtime');
         $aliases->set('@simple-view-bootstrap5', '@root');
 

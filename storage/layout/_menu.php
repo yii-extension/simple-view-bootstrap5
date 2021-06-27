@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
+use Yii\Extension\Bootstrap5\Nav;
+use Yii\Extension\Bootstrap5\NavBar;
 use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Form\Widget\Form;
 use Yiisoft\Html\Html;
 use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Router\UrlMatcherInterface;
 use Yiisoft\Translator\TranslatorInterface;
-use Yiisoft\Yii\Bootstrap5\Nav;
-use Yiisoft\Yii\Bootstrap5\NavBar;
 
 /**
  * @var CsrfTokenInterface $csrf
@@ -20,8 +20,7 @@ use Yiisoft\Yii\Bootstrap5\NavBar;
  */
 
 $config = [
-    'brandText()' => [$translator->translate('My Project', [], 'simple-view-bootstrap5')],
-    'options()' => [['class' => 'navbar navbar-dark navbar-expand-lg bg-dark']],
+
 ];
 
 $currentUrl = '';
@@ -55,12 +54,14 @@ if ($urlMatcher->getCurrentRoute() !== null) {
 
 ?>
 
-<?= NavBar::widget($config)->begin() ?>
+<?= NavBar::widget()
+    ->attributes(['class' => 'navbar navbar-dark navbar-expand-lg bg-dark'])
+    ->brandText($translator->translate('My Project', [], 'simple-view-bootstrap5'))
+    ->begin();
 
-    <?= Nav::widget()
+    Nav::widget()
+        ->attributes(['class' => 'navbar-nav me-auto'])
         ->currentPath($currentUrl)
-        ->items($menuItems)
-        ->options(['class' => 'navbar-nav me-auto'])
-    ?>
+        ->items($menuItems);
 
-<?= NavBar::end();
+NavBar::end();

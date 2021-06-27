@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-use Simple\View\Bootstrap5\Asset\BootstrapIconsAsset;
 use Simple\View\Bootstrap5\Asset\ViewBootstrap5Asset;
-use Yii\Extension\Widget\AlertMessage;
+use Yii\Extension\Asset\Bootstrap5\Bootstrap5IconsAsset;
+use Yii\Extension\Bootstrap5\AlertFlash;
 use Yiisoft\Assets\AssetManager;
 use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Html\Html;
 use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Router\UrlMatcherInterface;
+use Yiisoft\Session\Flash\Flash;
 use Yiisoft\Translator\TranslatorInterface;
 use Yiisoft\View\WebView;
 
@@ -17,6 +18,7 @@ use Yiisoft\View\WebView;
  * @var AssetManager $assetManager
  * @var string $content
  * @var CsrfTokenInterface $csrf
+ * @var Flash $flash
  * @var TranslatorInterface $translator
  * @var UrlMatcherInterface $urlMatcher
  * @var WebView $this
@@ -26,7 +28,7 @@ $assetManager->register([
     ViewBootstrap5Asset::class,
 ]);
 
-$aliases->set('@icons', $assetManager->getBundle(BootstrapIconsAsset::class)->baseUrl);
+$aliases->set('@icons', $assetManager->getBundle(Bootstrap5IconsAsset::class)->baseUrl);
 
 $this->addCssFiles($assetManager->getCssFiles());
 $this->addJsFiles($assetManager->getJsFiles());
@@ -53,7 +55,7 @@ $this->addJsFiles($assetManager->getJsFiles());
                                 'user' => $user ?? [],
                             ]
                         ) ?>
-                        <?= AlertMessage::widget() ?>
+                        <?= AlertFlash::widget([$flash]) ?>
                     </header>
 
                     <main class="px-3">
