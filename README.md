@@ -28,7 +28,7 @@
 ```shell
 composer create-project --prefer-dist --stability dev yii-extension/simple-app <your project>
 cd <your project>
-composer require yii-extension/simple-view-bootstrap5:@dev
+composer require yii-extension/simple-view-bootstrap5:^1.0.0
 ```
 
 ## Using custom error page
