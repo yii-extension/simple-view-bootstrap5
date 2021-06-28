@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 use Yii\Extension\Bootstrap5\Nav;
 use Yii\Extension\Bootstrap5\NavBar;
+use Yii\Extension\Simple\Forms\Form;
 use Yiisoft\Csrf\CsrfTokenInterface;
-use Yiisoft\Form\Widget\Form;
-use Yiisoft\Html\Html;
+use Yiisoft\Html\Tag\Button;
 use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Router\UrlMatcherInterface;
 use Yiisoft\Translator\TranslatorInterface;
@@ -31,19 +31,15 @@ if ($user !== [] && !$user->isGuest()) {
         [
             'label' => Form::widget()
                 ->action($urlGenerator->generate('logout'))
-                ->options(['csrf' => $csrf, 'encode' => false])
+                ->csrf($csrf)
                 ->begin() .
-                    Html::submitButton(
-                        'Logout (' . Html::encode($user->getIdentity()->getUsername()) . ')',
-                        [
-                            'id' => 'logout',
-                            'encode' => false,
-                        ],
-                    ) .
+                    Button::tag()
+                    ->class('btn btn-light btn-sm')
+                    ->content(
+                        'Logout (' . $user->getIdentity()->getUsername() . ')'
+                    )
+                    ->type('submit') .
                 Form::end(),
-            'encode' => false,
-            'linkOptions' => ['encode' => false],
-            'options' => ['encode' => false],
         ]
     ];
 }
@@ -57,11 +53,11 @@ if ($urlMatcher->getCurrentRoute() !== null) {
 <?= NavBar::widget()
     ->attributes(['class' => 'navbar navbar-dark navbar-expand-lg bg-dark'])
     ->brandText($translator->translate('My Project', [], 'simple-view-bootstrap5'))
-    ->begin();
+    ->begin() ?>
 
-    Nav::widget()
-        ->attributes(['class' => 'navbar-nav me-auto'])
+    <?= Nav::widget()
+        ->attributes(['class' => 'navbar-nav ms-auto mb-2 mb-lg-0'])
         ->currentPath($currentUrl)
-        ->items($menuItems);
+        ->items($menuItems) ?>
 
-NavBar::end();
+<?= NavBar::end();

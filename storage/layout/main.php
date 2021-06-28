@@ -42,7 +42,7 @@ $this->addJsFiles($assetManager->getJsFiles());
 
         <?php $this->beginBody() ?>
 
-            <body class="d-flex h-100 text-center text-black">
+            <body class="d-flex h-100 text-black">
                 <div class="cover-container-fluid d-flex w-100 h-100 mx-auto flex-column">
                     <header class="mb-auto">
                         <?= $this->render(
