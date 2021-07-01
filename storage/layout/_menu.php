@@ -38,6 +38,7 @@ if ($user !== [] && !$user->isGuest()) {
                     ->content(
                         'Logout (' . $user->getIdentity()->getUsername() . ')'
                     )
+                    ->id('logout')
                     ->type('submit') .
                 Form::end(),
         ]
