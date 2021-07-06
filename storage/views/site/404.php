@@ -14,15 +14,15 @@ use Yiisoft\Router\UrlMatcherInterface;
 $this->setTitle('404');
 ?>
 
-<h1 class="fw-bold">404</h1>
+<h1 class="fw-bold text-center">404</h1>
 
-<p class="text-danger">
+<p class="text-center text-danger">
     <?= $translator->translate('The page', [], 'simple-view-bootstrap5') ?>
     <strong><?= Html::encode($urlMatcher->getCurrentUri()->getPath()) ?></strong>
     <?= $translator->translate('not found', [], 'simple-view-bootstrap5') ?>.
 </p>
 
-<p>
+<p class="text-center">
     <?= $translator->translate(
         'The above error occurred while the Web server was processing your request',
         [],
@@ -38,6 +38,8 @@ $this->setTitle('404');
 
 <hr class="mb-3">
 
-<a class ="btn btn-danger" href="<?= $urlGenerator->generate('home') ?>">
-    <?= $translator->translate('Go Back Home', [], 'simple-view-bootstrap5') ?>
-</a>
+<div class="text-center">
+    <a class ="btn btn-danger" href="<?= $urlGenerator->generate('home') ?>">
+        <?= $translator->translate('Go Back Home', [], 'simple-view-bootstrap5') ?>
+    </a>
+</div>
