@@ -52,7 +52,7 @@ $this->addJsFiles($assetManager->getJsFiles());
                                 'translator' => $translator,
                                 'urlGenerator' => $urlGenerator,
                                 'urlMatcher' => $urlMatcher,
-                                'user' => $currentUser ?? [],
+                                'currentUser' => $currentUser ?? [],
                             ]
                         ) ?>
                         <?= AlertFlash::widget([$flash]) ?>
