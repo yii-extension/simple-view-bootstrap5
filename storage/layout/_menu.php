@@ -26,7 +26,7 @@ $config = [
 $currentUrl = '';
 $menuItems = [];
 
-if ($user !== [] && !$user->isGuest()) {
+if ($currentUser !== [] && !$currentUser->isGuest()) {
     $menuItems =  [
         [
             'label' => Form::widget()
@@ -36,7 +36,7 @@ if ($user !== [] && !$user->isGuest()) {
                     Button::tag()
                     ->class('btn btn-light btn-sm')
                     ->content(
-                        'Logout (' . $user->getIdentity()->getUsername() . ')'
+                        'Logout (' . $currentUser->getIdentity()->getUsername() . ')'
                     )
                     ->id('logout')
                     ->type('submit') .
