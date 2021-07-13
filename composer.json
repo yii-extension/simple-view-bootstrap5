@@ -1,9 +1,9 @@
 {
     "name": "yii-extension/simple-view-bootstrap5",
     "type": "library",
-    "description": "Simple view bootstrap4 for web application yii3.",
+    "description": "Simple view bootstrap5 for web application yii.",
     "keywords": [
-        "yii3",
+        "yii",
         "simple",
         "view",
         "bootstrap5",
