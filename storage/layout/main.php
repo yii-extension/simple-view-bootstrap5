@@ -55,7 +55,10 @@ $this->addJsFiles($assetManager->getJsFiles());
                                 'currentUser' => $currentUser ?? [],
                             ]
                         ) ?>
-                        <?= AlertFlash::widget([$flash]) ?>
+                        <?= AlertFlash::widget([$flash])
+                            ->bodyAttributes(['class' => 'align-items-center d-flex'])
+                            ->layoutBody('{icon}{body}{button}')
+                            ->render() ?>
                     </header>
 
                     <main class="px-3">
