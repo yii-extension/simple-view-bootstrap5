@@ -56,8 +56,8 @@ $this->addJsFiles($assetManager->getJsFiles());
                             ]
                         ) ?>
                         <?= AlertFlash::widget([$flash])
-                            ->bodyAttributes(['class' => 'align-items-center d-flex'])
-                            ->bodyContainer(true)
+                            ->bodyContainer()
+                            ->bodyContainerAttributes(['class' => 'align-items-center d-flex'])
                             ->iconAttributes(['class' => 'fs-2 me-4'])
                             ->layoutBody('{icon}{body}{button}')
                             ->render() ?>
