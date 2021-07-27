@@ -14,7 +14,7 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.4|^8.0",
-        "yii-extension/alert-message-bootstrap5": "^1.0.0",
+        "yii-extension/alert-flash-bootstrap5": "^1.0.0",
         "yii-extension/bootstrap5": "^1.0.0",
         "yiisoft/assets": "^1.0.0",
         "yiisoft/router": "^3.0@dev",
