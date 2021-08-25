@@ -8,8 +8,8 @@ use Yii\Extension\Bootstrap5\AlertFlash;
 use Yiisoft\Assets\AssetManager;
 use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Html\Html;
+use Yiisoft\Router\CurrentRoute;
 use Yiisoft\Router\UrlGeneratorInterface;
-use Yiisoft\Router\UrlMatcherInterface;
 use Yiisoft\Session\Flash\Flash;
 use Yiisoft\Translator\TranslatorInterface;
 use Yiisoft\View\WebView;
@@ -18,9 +18,9 @@ use Yiisoft\View\WebView;
  * @var AssetManager $assetManager
  * @var string $content
  * @var CsrfTokenInterface $csrf
+ * @var CurrentRoute $currentRoute
  * @var Flash $flash
  * @var TranslatorInterface $translator
- * @var UrlMatcherInterface $urlMatcher
  * @var WebView $this
  */
 
@@ -49,10 +49,10 @@ $this->addJsFiles($assetManager->getJsFiles());
                             '_menu',
                             [
                                 'csrf' => $csrf,
+                                'currentRoute' => $currentRoute,
+                                'currentUser' => $currentUser ?? [],
                                 'translator' => $translator,
                                 'urlGenerator' => $urlGenerator,
-                                'urlMatcher' => $urlMatcher,
-                                'currentUser' => $currentUser ?? [],
                             ]
                         ) ?>
                         <?= AlertFlash::widget([$flash])

@@ -7,16 +7,16 @@ use Yii\Extension\Bootstrap5\NavBar;
 use Yii\Extension\Simple\Forms\Form;
 use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Html\Tag\Button;
+use Yiisoft\Router\CurrentRoute;
 use Yiisoft\Router\UrlGeneratorInterface;
-use Yiisoft\Router\UrlMatcherInterface;
 use Yiisoft\Translator\TranslatorInterface;
 
 /**
  * @var CsrfTokenInterface $csrf
+ * @var CurrentRoute $currentRoute
  * @var array $menuItems
  * @var TranslatorInterface $translator
  * @var UrlGeneratorInterface $urlGenerator
- * @var UrlMatcherInterface $urlMatcher
  */
 
 $config = [
@@ -45,8 +45,8 @@ if ($currentUser !== [] && !$currentUser->isGuest()) {
     ];
 }
 
-if ($urlMatcher->getCurrentRoute() !== null) {
-    $currentUrl = $urlMatcher->getCurrentUri()->getPath();
+if ($currentRoute->getRoute() !== null) {
+    $currentUrl = $currentRoute->getUri()->getPath();
 }
 
 ?>
