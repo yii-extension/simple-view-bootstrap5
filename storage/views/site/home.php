@@ -24,7 +24,5 @@ $this->setTitle(Html::encode($title));
         <a href="https://github.com/yiisoft/docs/tree/master/guide/en" target="_blank" rel="noopener">
             <?= $translator->translate("Don't forget to check the guide.", [], 'simple-view-bootstrap5') ?>
         </a>
-        <br>
-        <span>Icon CSS Text: <i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i></i></span>
     </p>
 </div>
