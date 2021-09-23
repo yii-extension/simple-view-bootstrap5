@@ -20,7 +20,6 @@ use Yiisoft\Translator\TranslatorInterface;
  * @var string $userName
  */
 
-$currentUrl = '';
 $isGuest = $isGuest ?? null;
 $menuItems = [];
 
@@ -43,9 +42,7 @@ if ($isGuest === false) {
     ];
 }
 
-if ($currentRoute->getRoute() !== null) {
-    $currentUrl = $currentRoute->getUri() !== null ? $currentRoute->getUri()->getPath() : '';
-}
+$currentUrl = $currentRoute->getUri() !== null ? $currentRoute->getUri()->getPath() : '';
 ?>
 
 <?= NavBar::widget()

@@ -3,10 +3,15 @@
 declare(strict_types=1);
 
 use Yiisoft\Html\Html;
+use Yiisoft\Translator\TranslatorInterface;
+use Yiisoft\View\WebView;
 
-$title = $translator->translate('My Project', [], 'simple-view-bootstrap5');
+/**
+ * @var TranslatorInterface $translator
+ * @var WebView $this
+ */
 
-$this->setTitle(Html::encode($title));
+$this->setTitle(Html::encode($translator->translate('My Project', [], 'simple-view-bootstrap5')));
 ?>
 
 <div class="jumbotron jumbotron-fluid text-center">

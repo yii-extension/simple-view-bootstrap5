@@ -5,10 +5,14 @@ declare(strict_types=1);
 use Yiisoft\Html\Html;
 use Yiisoft\Router\CurrentRoute;
 use Yiisoft\Router\UrlGeneratorInterface;
+use Yiisoft\Translator\TranslatorInterface;
+use Yiisoft\View\WebView;
 
 /**
  * @var CurrentRoute $currentRoute
- * @var UrlMatcherInterface $urlMatcher
+ * @var TranslatorInterface $translator
+ * @var UrlGeneratorInterface $urlGenerator
+ * @var WebView $this
  */
 
 $this->setTitle('404');
@@ -18,7 +22,7 @@ $this->setTitle('404');
 
 <p class="text-center text-danger">
     <?= $translator->translate('The page', [], 'simple-view-bootstrap5') ?>
-    <strong><?= Html::encode($currentRoute->getUri()->getPath()) ?></strong>
+    <strong><?= Html::encode($currentRoute->getUri() !== null ? $currentRoute->getUri()->getPath() : '') ?></strong>
     <?= $translator->translate('not found', [], 'simple-view-bootstrap5') ?>.
 </p>
 
