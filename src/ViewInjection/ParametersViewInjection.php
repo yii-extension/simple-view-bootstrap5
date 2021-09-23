@@ -10,10 +10,10 @@ use Yiisoft\Router\CurrentRoute;
 use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Session\Flash\Flash;
 use Yiisoft\Translator\TranslatorInterface;
-use Yiisoft\Yii\View\ContentParametersInjectionInterface;
+use Yiisoft\Yii\View\CommonParametersInjectionInterface;
 use Yiisoft\Yii\View\LayoutParametersInjectionInterface;
 
-final class ParametersViewInjection implements ContentParametersInjectionInterface, LayoutParametersInjectionInterface
+final class ParametersViewInjection implements CommonParametersInjectionInterface, LayoutParametersInjectionInterface
 {
     private Aliases $aliases;
     private AssetManager $assetManager;
@@ -38,7 +38,7 @@ final class ParametersViewInjection implements ContentParametersInjectionInterfa
         $this->urlGenerator = $urlGenerator;
     }
 
-    public function getContentParameters(): array
+    public function getCommonParameters(): array
     {
         return [
             'assetManager' => $this->assetManager,
@@ -52,11 +52,7 @@ final class ParametersViewInjection implements ContentParametersInjectionInterfa
     {
         return [
             'aliases' => $this->aliases,
-            'assetManager' => $this->assetManager,
-            'currentRoute' => $this->currentRoute,
             'flash' => $this->flash,
-            'translator' => $this->translator,
-            'urlGenerator' => $this->urlGenerator,
         ];
     }
 }

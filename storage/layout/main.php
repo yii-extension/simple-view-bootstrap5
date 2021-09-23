@@ -24,9 +24,7 @@ use Yiisoft\View\WebView;
  * @var WebView $this
  */
 
-$assetManager->register([
-    ViewBootstrap5Asset::class,
-]);
+$assetManager->register([ViewBootstrap5Asset::class]);
 
 $aliases->set('@icons', $assetManager->getBundle(Bootstrap5IconsAsset::class)->baseUrl);
 
@@ -45,16 +43,7 @@ $this->addJsFiles($assetManager->getJsFiles());
             <body class="d-flex h-100 text-black">
                 <div class="cover-container-fluid d-flex w-100 h-100 mx-auto flex-column">
                     <header class="mb-auto">
-                        <?= $this->render(
-                            '_menu',
-                            [
-                                'csrf' => $csrf,
-                                'currentRoute' => $currentRoute,
-                                'currentUser' => $currentUser ?? [],
-                                'translator' => $translator,
-                                'urlGenerator' => $urlGenerator,
-                            ]
-                        ) ?>
+                        <?= $this->render('_menu', ['currentUser' => $currentUser ?? []]) ?>
                         <?= AlertFlash::widget([$flash])
                             ->bodyContainer()
                             ->bodyContainerAttributes(['class' => 'align-items-center d-flex'])
@@ -68,7 +57,7 @@ $this->addJsFiles($assetManager->getJsFiles());
                     </main>
 
                     <footer class='mt-auto bg-dark py-3'>
-                        <?= $this->render('_footer', ['aliases' => $aliases]) ?>
+                        <?= $this->render('_footer') ?>
                     </footer>
 
                 </div>

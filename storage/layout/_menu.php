@@ -5,28 +5,26 @@ declare(strict_types=1);
 use Yii\Extension\Bootstrap5\Nav;
 use Yii\Extension\Bootstrap5\NavBar;
 use Yii\Extension\Simple\Forms\Form;
-use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Html\Tag\Button;
 use Yiisoft\Router\CurrentRoute;
 use Yiisoft\Router\UrlGeneratorInterface;
 use Yiisoft\Translator\TranslatorInterface;
 
 /**
- * @var CsrfTokenInterface $csrf
+ * @var string $csrf
  * @var CurrentRoute $currentRoute
+ * @var bool|null $isGuest
  * @var array $menuItems
  * @var TranslatorInterface $translator
  * @var UrlGeneratorInterface $urlGenerator
+ * @var string $userName
  */
 
-$config = [
-
-];
-
 $currentUrl = '';
+$isGuest = $isGuest ?? null;
 $menuItems = [];
 
-if ($currentUser !== [] && !$currentUser->isGuest()) {
+if ($isGuest === false) {
     $menuItems =  [
         [
             'label' => Form::widget()
@@ -36,7 +34,7 @@ if ($currentUser !== [] && !$currentUser->isGuest()) {
                     Button::tag()
                     ->class('btn btn-light btn-sm')
                     ->content(
-                        'Logout (' . $currentUser->getIdentity()->getUsername() . ')'
+                        'Logout (' . $userName . ')'
                     )
                     ->id('logout')
                     ->type('submit') .
@@ -46,9 +44,8 @@ if ($currentUser !== [] && !$currentUser->isGuest()) {
 }
 
 if ($currentRoute->getRoute() !== null) {
-    $currentUrl = $currentRoute->getUri()->getPath();
+    $currentUrl = $currentRoute->getUri() !== null ? $currentRoute->getUri()->getPath() : '';
 }
-
 ?>
 
 <?= NavBar::widget()

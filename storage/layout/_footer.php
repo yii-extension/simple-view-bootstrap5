@@ -1,3 +1,13 @@
+<?php
+
+declare(strict_types=1);
+
+use Yiisoft\Aliases\Aliases;
+
+/**
+ * @var Aliases $aliases
+ */
+?>
 <div class = 'd-flex flex-fill align-items-center container-fluid'>
     <div class = 'd-flex flex-fill float-start'>
         <i class=''></i>
@@ -27,7 +37,7 @@
                 <use xlink:href="<?= $aliases->get('@icons') . '/' . 'bootstrap-icons.svg#twitter' ?>"/>
             </svg>
         </a>
-        <a class='text-decoration-none px-1' ref='https://t.me/yii3ru' target='_blank' rel='noopener'>
+        <a class='text-decoration-none px-1' href='https://t.me/yii3ru' target='_blank' rel='noopener'>
             <svg class="bi text-white" width="24" height="24">
                 <use xlink:href="<?= $aliases->get('@icons') . '/' . 'bootstrap-icons.svg#chat-text' ?>"/>
             </svg>
