@@ -43,7 +43,7 @@ $this->addJsFiles($assetManager->getJsFiles());
             <body class="d-flex h-100 text-black">
                 <div class="cover-container-fluid d-flex w-100 h-100 mx-auto flex-column">
                     <header class="mb-auto">
-                        <?= $this->render('_menu', ['currentUser' => $currentUser ?? []]) ?>
+                        <?= $this->render('_menu') ?>
                         <?= AlertFlash::widget([$flash])
                             ->bodyContainer()
                             ->bodyContainerAttributes(['class' => 'align-items-center d-flex'])
