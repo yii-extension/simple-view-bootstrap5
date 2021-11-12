@@ -28,42 +28,7 @@
 ```shell
 composer create-project --prefer-dist --stability dev yii-extension/simple-app <your project>
 cd <your project>
-composer require yii-extension/simple-view-bootstrap5:^1.0.0
-```
-
-## Using custom error page
-
-To configure the custom error page, you must modify the settings in the main application in the directory `config/web/yiisoft-web.php`.
-
-```php
-<?php
-
-declare(strict_types=1);
-
-use Simple\View\Bootstrap5\Handler\NotFoundHandler;
-use Yiisoft\ErrorHandler\Middleware\ErrorCatcher;
-use Yiisoft\Factory\Definition\Reference;
-use Yiisoft\Middleware\Dispatcher\MiddlewareDispatcher;
-use Yiisoft\Router\Middleware\Router;
-use Yiisoft\Session\SessionMiddleware;
-use Yiisoft\Yii\Web\Application;
-
-return [
-    Application::class => [
-        'class' => Application::class,
-        '__construct()' => [
-            'dispatcher' => static fn(MiddlewareDispatcher $middlewareDispatcher) =>
-                $middlewareDispatcher->withMiddlewares(
-                    [
-                        Router::class,
-                        SessionMiddleware::class,
-                        ErrorCatcher::class,
-                    ]
-                ),
-            'fallbackHandler' => Reference::to(NotFoundHandler::class),
-        ],
-    ],
-];
+composer require yii-extension/simple-view-bootstrap5:^1.0
 ```
 
 ## Using translations
