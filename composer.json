@@ -51,10 +51,9 @@
         },
         "config-plugin": {
             "params": "params.php",
-            "common": [
-                "common/*.php"
-            ],
-            "routes": ["routes.php"]
+            "common": "common/*.php",
+            "routes": "routes.php",
+            "widgets": "widgets.php"
         },
         "config-plugin-environments": {
             "tests": {
