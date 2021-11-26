@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Yii\Extension\Bootstrap5\Nav;
 use Yii\Extension\Bootstrap5\NavBar;
+use Yiisoft\Auth\IdentityInterface;
 use Yiisoft\Csrf\CsrfTokenInterface;
 use Yiisoft\Form\Widget\Form;
 use Yiisoft\Html\Tag\Button;
@@ -15,18 +16,16 @@ use Yiisoft\View\WebView;
 /**
  * @var CsrfTokenInterface $csrf
  * @var CurrentRoute $currentRoute
- * @var bool|null $isGuest
+ * @var IdentityInterface $identity
  * @var array $menuItems
  * @var TranslatorInterface $translator
  * @var UrlGeneratorInterface $urlGenerator
  * @var string $userName
  * @var WebView $this
  */
-
-$isGuest = $isGuest ?? null;
 $menuItems = $this->getParameter('menuItemsIsGuest', []);
 
-if ($isGuest === false) {
+if ($identity instanceof IdentityInterface) {
     $menuItems = $this->getParameter('menuItemsIsNotGuest', []);
     $menuItems[] = [
         'label' => Form::widget()
@@ -36,7 +35,7 @@ if ($isGuest === false) {
             Button::tag()
                 ->class('btn btn-light btn-sm')
                 ->content(
-                    'Logout (' . $userName . ')'
+                    'Logout (' . $identity->user->username . ')'
                 )
                 ->id('logout')
                 ->type('submit') .
