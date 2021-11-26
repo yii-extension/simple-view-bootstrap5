@@ -11,7 +11,7 @@ use Yiisoft\View\WebView;
  * @var WebView $this
  */
 
-$this->setTitle(Html::encode($translator->translate('My Project', [], 'simple-view-bootstrap5')));
+$this->setTitle($translator->translate('My Project', [], 'simple-view-bootstrap5'));
 ?>
 
 <div class="jumbotron jumbotron-fluid text-center">

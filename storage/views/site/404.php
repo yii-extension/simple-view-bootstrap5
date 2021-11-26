@@ -18,7 +18,7 @@ use Yiisoft\View\WebView;
 $this->setTitle('404');
 ?>
 
-<h1 class="fw-bold text-center">404</h1>
+<h1 class="fw-bold text-center"><?= Html::encode($this->getTitle()) ?></h1>
 
 <p class="text-center text-danger">
     <?= $translator->translate('The page', [], 'simple-view-bootstrap5') ?>
