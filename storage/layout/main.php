@@ -25,11 +25,6 @@ use Yiisoft\View\WebView;
  */
 
 $assetManager->registerMany([ViewBootstrap5Asset::class]);
-$bootstrapIconsPath = $assetManager->getBundle(Bootstrap5IconsAsset::class)->baseUrl;
-
-if ($bootstrapIconsPath !== null) {
-    $aliases->set('@icons', $bootstrapIconsPath);
-}
 
 $this->addCssFiles($assetManager->getCssFiles());
 $this->addJsFiles($assetManager->getJsFiles());
