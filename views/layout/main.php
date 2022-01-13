@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Simple\View\Bootstrap5\Asset\ViewBootstrap5Asset;
-use Yii\Extension\Asset\Bootstrap5\Bootstrap5IconsAsset;
 use Yii\Extension\Bootstrap5\AlertFlash;
 use Yiisoft\Aliases\Aliases;
 use Yiisoft\Assets\AssetManager;
@@ -24,7 +23,7 @@ use Yiisoft\View\WebView;
  * @var WebView $this
  */
 
-$assetManager->registerMany([ViewBootstrap5Asset::class]);
+$assetManager->register(ViewBootstrap5Asset::class);
 
 $this->addCssFiles($assetManager->getCssFiles());
 $this->addJsFiles($assetManager->getJsFiles());

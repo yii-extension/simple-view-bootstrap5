@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 use Yii\Extension\Bootstrap5\Nav;
 use Yii\Extension\Bootstrap5\NavBar;
-use Yiisoft\Definitions\DynamicReference;
-use Yiisoft\User\CurrentUser;
 
 /** @var array $params */
 
