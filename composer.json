@@ -17,7 +17,7 @@
         "yii-extension/alert-flash-bootstrap5": "^1.0",
         "yii-extension/bootstrap5": "^1.0",
         "yiisoft/assets": "^2.0",
-        "yiisoft/form": "dev-enhacements-factory as 1.0",
+        "yiisoft/form": "^1.0",
         "yiisoft/translator-formatter-intl": "^1.0",
         "yiisoft/translator-message-php": "^1.0",
         "yiisoft/user": "^1.0",
@@ -63,11 +63,5 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "repositories": [
-        {
-            "type": "github",
-            "url": "https://github.com/terabytesoftw/yii-form"
-        }
-    ]
+    }
 }
